@@ -17,4 +17,4 @@ The application also includes error handling for the following:
 ## Deployment
 [d-belleza.github.io/password-generator](https://d-belleza.github.io/password-generator)
 
-![Application Screenshot](passwordsc.png "Screenshot")
+![Application Screenshot](./assets/images/passwordsc.png "Screenshot")
