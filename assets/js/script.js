@@ -9,18 +9,14 @@ var generateBtn = document.querySelector("#generate");
 
 // generatePassword function
 var generatePassword = function(){
+  var password = "";
   // Ask user for password length
   var lengthPrompt = window.prompt("Password length? 8-128 characters");
   lengthPrompt = parseInt(lengthPrompt, 10); // Convert to integer base 10
   if(lengthPrompt === null){
     generatePassword();
   }
-  if(lengthPrompt < 8 || lengthPrompt > 128 || isNaN(lengthPrompt)){
-    window.alert("Please enter valid length."); //Length error handling
-    generatePassword();
-  }
   if(lengthPrompt >= 8 && lengthPrompt <= 128){
-    var password = "";
     // Include character type prompts
     var lowerPrompt = window.confirm("Include lowercase?");
     var upperPrompt = window.confirm("Include uppercase?");
@@ -53,7 +49,11 @@ var generatePassword = function(){
       password += include[Math.floor(Math.random() * include.length)];
     }
     return password;
+  }else{
+    window.alert("Please enter valid length."); //Length error handling
+    return generatePassword();
   }
+  
 }
 
 // Write password to the #password input
